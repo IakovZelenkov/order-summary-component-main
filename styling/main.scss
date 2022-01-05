@@ -1,0 +1,210 @@
+@use "./mixins.scss" as *;
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap");
+
+// Colors
+
+/// Primary
+
+$Pale-blue: hsl(225, 100%, 94%);
+$Bright-blue: hsl(245, 75%, 52%);
+$hover: hsla(245, 83%, 68%, 1);
+
+/// Neutral
+
+$Very-pale-blue: hsl(225, 100%, 98%);
+$Desaturated-blue: hsl(224, 23%, 55%);
+$Dark-blue: hsl(223, 47%, 23%);
+
+// Text
+
+$font-weight-regular: 500;
+$font-weight-bold: 700;
+$font-weight-black: 900;
+
+/// Size
+$font-size-heading: 2.8rem;
+$font-size-heading-mobile: 2.2rem;
+$font-size-body: 1.6rem;
+$font-size-body-mobile: 1.5rem;
+$font-size-small: 1.6rem;
+$font-size-small-mobile: 1.4rem;
+$font-size-detail: 1.4rem;
+$font-size-detail-mobile: 1.3rem;
+$line-height-body: 2.6rem;
+$line-height-body-mobile: 2.5rem;
+
+html {
+	font-family: "Red Hat Display", sans-serif;
+}
+
+.attribution {
+	font-size: 11px;
+	text-align: center;
+}
+.attribution a {
+	color: hsl(228, 45%, 44%);
+}
+
+body {
+	background: $Pale-blue;
+	background-image: url(/images/pattern-background-desktop.svg);
+	background-repeat: no-repeat;
+	width: 100%;
+
+	min-height: 100vh;
+	@include center();
+}
+
+.summary-card {
+	background: white;
+	border-radius: 2rem;
+	overflow: hidden;
+	width: 90%;
+	max-width: 32.7rem;
+
+	transition: max-width 250ms ease;
+
+	box-shadow: 0px 40px 40px -20px rgba(13, 48, 189, 0.151826);
+
+	@include mq(tablet) {
+		max-width: 45rem;
+	}
+}
+
+.img-container {
+	width: 100%;
+	@include center();
+	transition: max-width 250ms ease;
+
+	img {
+		width: 100%;
+	}
+}
+
+.text-container {
+	padding: 3.2rem 2.4rem;
+	@include flex(column nowrap, start, center);
+	gap: 1.6rem;
+
+	> *:not(:nth-child(1)):not(:nth-last-child(1)) {
+		margin-bottom: 0.8rem;
+	}
+
+	@include mq(tablet) {
+		padding: 4.5rem 4.8rem 4.8rem;
+		gap: 1.7rem;
+
+		> *:not(:nth-child(1)):not(:nth-last-child(1)):not(:nth-child(2)) {
+			margin-bottom: 1.5rem;
+		}
+	}
+}
+
+.text-container__heading {
+	font-size: $font-size-heading-mobile;
+	font-weight: $font-weight-black;
+	color: $Dark-blue;
+
+	@include mq(tablet) {
+		font-size: $font-size-heading;
+	}
+}
+
+.text-container__description {
+	padding: 0 0.8rem 0;
+	font-size: $font-size-body-mobile;
+	font-weight: $font-weight-regular;
+	line-height: $line-height-body-mobile;
+	color: $Desaturated-blue;
+	text-align: center;
+
+	@include mq(tablet) {
+		font-size: $font-size-body;
+		line-height: $line-height-body;
+	}
+}
+
+.text-container__plan-container {
+	background: $Very-pale-blue;
+	border-radius: 1.1rem;
+	padding: 1.7rem 1.6rem 1.6rem;
+	width: 100%;
+	@include flex(row nowrap, start, center);
+
+	@include mq(tablet) {
+		padding: 2.5rem 2.4rem;
+	}
+
+	.text {
+		width: 100%;
+		padding-left: 2rem;
+		@include flex(row nowrap, space-between, center);
+
+		.plan-name {
+			font-weight: $font-weight-black;
+			font-size: $font-size-small-mobile;
+			color: $Dark-blue;
+
+			@include mq(tablet) {
+				font-size: $font-size-small;
+			}
+		}
+
+		.plan-price {
+			font-weight: $font-weight-regular;
+			font-size: $font-size-small-mobile;
+			color: $Desaturated-blue;
+
+			@include mq(tablet) {
+				font-size: $font-size-small;
+			}
+		}
+
+		.change {
+			font-weight: $font-weight-bold;
+			font-size: $font-size-detail-mobile;
+			color: $Bright-blue;
+			text-decoration: underline;
+			cursor: pointer;
+
+			&:hover {
+				color: $hover;
+			}
+
+			@include mq(tablet) {
+				font-size: $font-size-detail;
+			}
+		}
+	}
+}
+
+.text-container__payment {
+	cursor: pointer;
+	background-color: $Bright-blue;
+	width: 100%;
+	padding: 1.5rem;
+	border-radius: 1.1rem;
+	max-height: 5rem;
+	@include flex(row nowrap, center, center);
+
+	box-shadow: 0px 20px 20px rgba(56, 42, 225, 0.190291);
+
+	color: white;
+	font-weight: $font-weight-black;
+	font-size: $font-size-body-mobile;
+
+	&:hover {
+		background: $hover;
+	}
+}
+
+.text-container__cancel {
+	cursor: pointer;
+	font-weight: $font-weight-black;
+	font-size: $font-size-body-mobile;
+	color: $Desaturated-blue;
+
+	&:hover {
+		color: hsla(223, 47%, 23%, 1);
+	}
+}

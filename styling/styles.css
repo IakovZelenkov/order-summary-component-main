@@ -1,0 +1,186 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap");
+html {
+  font-family: "Red Hat Display", sans-serif;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: #3e52a3;
+}
+
+body {
+  background: #e0e8ff;
+  background-image: url(/images/pattern-background-desktop.svg);
+  background-repeat: no-repeat;
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.summary-card {
+  background: white;
+  border-radius: 2rem;
+  overflow: hidden;
+  width: 90%;
+  max-width: 32.7rem;
+  transition: max-width 250ms ease;
+  box-shadow: 0px 40px 40px -20px rgba(13, 48, 189, 0.151826);
+}
+@media only screen and (min-width: 768px) {
+  .summary-card {
+    max-width: 45rem;
+  }
+}
+
+.img-container {
+  width: 100%;
+  display: grid;
+  place-items: center;
+  transition: max-width 250ms ease;
+}
+.img-container img {
+  width: 100%;
+}
+
+.text-container {
+  padding: 3.2rem 2.4rem;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: start;
+  align-items: center;
+  gap: 1.6rem;
+}
+.text-container > *:not(:nth-child(1)):not(:nth-last-child(1)) {
+  margin-bottom: 0.8rem;
+}
+@media only screen and (min-width: 768px) {
+  .text-container {
+    padding: 4.5rem 4.8rem 4.8rem;
+    gap: 1.7rem;
+  }
+  .text-container > *:not(:nth-child(1)):not(:nth-last-child(1)):not(:nth-child(2)) {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.text-container__heading {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #1f2f56;
+}
+@media only screen and (min-width: 768px) {
+  .text-container__heading {
+    font-size: 2.8rem;
+  }
+}
+
+.text-container__description {
+  padding: 0 0.8rem 0;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 2.5rem;
+  color: #7280a7;
+  text-align: center;
+}
+@media only screen and (min-width: 768px) {
+  .text-container__description {
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+  }
+}
+
+.text-container__plan-container {
+  background: #f5f7ff;
+  border-radius: 1.1rem;
+  padding: 1.7rem 1.6rem 1.6rem;
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: start;
+  align-items: center;
+}
+@media only screen and (min-width: 768px) {
+  .text-container__plan-container {
+    padding: 2.5rem 2.4rem;
+  }
+}
+.text-container__plan-container .text {
+  width: 100%;
+  padding-left: 2rem;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.text-container__plan-container .text .plan-name {
+  font-weight: 900;
+  font-size: 1.4rem;
+  color: #1f2f56;
+}
+@media only screen and (min-width: 768px) {
+  .text-container__plan-container .text .plan-name {
+    font-size: 1.6rem;
+  }
+}
+.text-container__plan-container .text .plan-price {
+  font-weight: 500;
+  font-size: 1.4rem;
+  color: #7280a7;
+}
+@media only screen and (min-width: 768px) {
+  .text-container__plan-container .text .plan-price {
+    font-size: 1.6rem;
+  }
+}
+.text-container__plan-container .text .change {
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #3829e0;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.text-container__plan-container .text .change:hover {
+  color: #756af1;
+}
+@media only screen and (min-width: 768px) {
+  .text-container__plan-container .text .change {
+    font-size: 1.4rem;
+  }
+}
+
+.text-container__payment {
+  cursor: pointer;
+  background-color: #3829e0;
+  width: 100%;
+  padding: 1.5rem;
+  border-radius: 1.1rem;
+  max-height: 5rem;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 20px 20px rgba(56, 42, 225, 0.190291);
+  color: white;
+  font-weight: 900;
+  font-size: 1.5rem;
+}
+.text-container__payment:hover {
+  background: #756af1;
+}
+
+.text-container__cancel {
+  cursor: pointer;
+  font-weight: 900;
+  font-size: 1.5rem;
+  color: #7280a7;
+}
+.text-container__cancel:hover {
+  color: #1f2f56;
+}
+
+/*# sourceMappingURL=styles.css.map */
